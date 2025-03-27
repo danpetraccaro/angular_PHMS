@@ -5,7 +5,7 @@
   },
   "newProjectRoot": "projects",
   "projects": {
-    "demo": {
+    "angulardevelopment": {
       "architect": {
         "build": {
           "builder": "@angular/build:application",
@@ -26,13 +26,19 @@
             }
           },
           "options": {
-            "assets": [],
+            "assets": [
+              {
+                "glob": "**/*",
+                "input": "src/assets",
+                "output": "/assets/"
+              }
+            ],
             "index": "src/index.html",
             "browser": "src/main.ts",
-            "outputPath": "dist/demo",
+            "outputPath": "dist/angulardevelopment",
             "polyfills": ["zone.js"],
             "scripts": [],
-            "styles": ["src/global_styles.css"],
+            "styles": ["src/global_styles.scss"],
             "tsConfig": "tsconfig.app.json"
           }
         },
@@ -40,10 +46,10 @@
           "builder": "@angular/build:dev-server",
           "configurations": {
             "development": {
-              "buildTarget": "demo:build:development"
+              "buildTarget": "angulardevelopment:build:development"
             },
             "production": {
-              "buildTarget": "demo:build:production"
+              "buildTarget": "angulardevelopment:build:production"
             }
           },
           "defaultConfiguration": "development"
@@ -52,7 +58,11 @@
       "prefix": "app",
       "projectType": "application",
       "root": "",
-      "schematics": {},
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        }
+      },
       "sourceRoot": "src"
     }
   },

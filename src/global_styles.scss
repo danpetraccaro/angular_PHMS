@@ -1,4 +1,6 @@
-/* Add application styles & imports to this file! */
+@use '@angular/material' as mat;
+
+// Global styles
 body {
   margin: 0;
   font-family: Arial, sans-serif;
@@ -12,3 +14,6 @@ h1, h2 {
 p {
   color: #666;
 }
+
+// Include material theme
+@include mat.core();

@@ -1,0 +1,42 @@
+.container {
+  padding: 20px;
+  margin: 0 auto;
+}
+
+.flex-container {
+  display: grid;
+  grid-template-columns: auto auto auto auto auto;
+  width: 80%;
+  justify-content: center;
+  margin: auto;
+}
+
+.flex-container > div {
+  margin: 10px;
+  font-size: 30px;
+  width: 300px;
+}
+
+.page-link-icon {
+  font-size: 100px;
+}
+
+a {
+  text-decoration: none !important;
+}
+
+mat-card {
+  height: 100%;
+  width: 100%;
+}
+
+mat-card-header, mat-card-content {
+  justify-content: center;
+  text-align: center;
+}
+
+mat-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
