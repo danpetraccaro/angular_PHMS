@@ -1,11 +1,24 @@
 import { Component } from '@angular/core';
-import { RouterLink } from '@angular/router';
+import { RouterLink, RouterOutlet } from '@angular/router';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatListModule } from '@angular/material/list';
+import { MatIconModule } from '@angular/material/icon';
+import { MatCardModule } from '@angular/material/card';
+import { ToolbarComponent } from '../toolbar/toolbar.component'; // ✅ Update path if needed
 
 @Component({
   selector: 'app-food-surveillance',
-  standalone: true,
-  imports: [RouterLink],
+  standalone: true, // ✅ This is required
+  imports: [
+    RouterLink,
+    RouterOutlet,
+    MatSidenavModule,
+    MatListModule,
+    MatIconModule,
+    MatCardModule,
+    ToolbarComponent
+  ],
   templateUrl: './food-surveillance.component.html',
-  styleUrls: ['./food-surveillance.component.scss']
+  styleUrls: ['./food-surveillance.component.scss'] // ✅ fixed typo
 })
 export class FoodSurveillanceComponent {}
