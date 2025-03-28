@@ -1,9 +1,56 @@
-.back-link {
-    display: inline-flex;
+.main-container {
+    height: 100vh;
+    border: 2px solid #ccc; /* Optional: outer border for full layout */
+  }
+  
+  .nav-navigation {
+    width: 220px;
+    background-color: #f5f5f5;
+    border-right: 2px solid #ccc; /* Vertical divider */
+  }
+  
+  mat-sidenav-content {
+    display: flex;
+    flex-direction: column;
+    border-left: 2px solid #eee;
+  }
+  
+  app-toolbar {
+    border-bottom: 2px solid #ccc; /* Horizontal divider under toolbar */
+  }
+  
+  .page-content {
+    padding: 20px;
+    border: 2px dashed #ddd; /* Optional: border around page content */
+    margin: 20px;
+    border-radius: 8px;
+    background-color: #fff;
+  }
+
+  .side-nav-list {
+    padding: 10px;
+  }
+  
+  mat-list-item {
+    display: flex;
     align-items: center;
-    gap: 5px;
-    text-decoration: none;
+    padding: 12px 16px;
+    gap: 10px;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.2s ease;
+  }
+  
+  mat-list-item:hover {
+    background-color: #e0f2ff;
+  }
+  
+  .nav-icon {
+    font-size: 24px;
     color: #006cff;
-    font-weight: bold;
-    margin-bottom: 1rem;
+  }
+  
+  .nav-label {
+    font-size: 15px;
+    color: #000;
   }

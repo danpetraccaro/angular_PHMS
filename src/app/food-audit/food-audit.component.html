@@ -1,5 +1,51 @@
-<a [routerLink]="['/']" class="back-link">
-    <span class="material-symbols-outlined" style="vertical-align: middle;">arrow_back</span>
-    Back to Home
-  </a>
-  <p>food-audit works!</p>
+<mat-sidenav-container class="main-container">
+    <!-- 1. Left Sidebar Navigation -->
+    <mat-sidenav #sidenav mode="side" opened class="nav-navigation">
+        <mat-nav-list class="side-nav-list">
+            <mat-list-item routerLink="../home">
+                <span class="material-symbols-outlined nav-icon">home</span>
+              <span class="nav-label">Home</span>
+            </mat-list-item>
+          
+            <mat-list-item routerLink="../organisation-searcher">
+              <span class="material-symbols-outlined nav-icon">search</span>
+              <span class="nav-label">Organisation Searcher</span>
+            </mat-list-item>
+          
+            <mat-list-item routerLink="../schemes-list">
+              <span class="material-symbols-outlined nav-icon">factory</span>
+              <span class="nav-label">Premise</span>
+            </mat-list-item>
+          
+            <mat-list-item routerLink="../invoices-outstanding-installation">
+              <span class="material-symbols-outlined nav-icon">paid</span>
+              <span class="nav-label">Outstanding Installation Invoices</span>
+            </mat-list-item>
+          
+            <mat-list-item routerLink="../invoices-outstanding-product">
+              <span class="material-symbols-outlined nav-icon">paid</span>
+              <span class="nav-label">Outstanding Product Invoices</span>
+            </mat-list-item>
+          
+            <mat-list-item routerLink="../incident-searcher">
+              <span class="material-symbols-outlined nav-icon">emergency</span>
+              <span class="nav-label">Incidents</span>
+            </mat-list-item>
+          </mat-nav-list>
+    </mat-sidenav>
+  
+    <!-- 2. Main Page Area -->
+    <mat-sidenav-content>
+      <!-- Top Toolbar -->
+      <app-toolbar [title]="'Food Audit'" [icon]="'restaurant'"></app-toolbar>
+
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+
+        <!-- Page Content -->
+        <div class="page-content">
+            <a [routerLink]="['/']" class="back-link">
+              <span class="material-symbols-outlined" style="vertical-align: middle;">arrow_back</span>
+              Back to Home
+            </a>
+        </div>
