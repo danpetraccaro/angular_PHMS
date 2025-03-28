@@ -1,11 +1,11 @@
 import { Component } from '@angular/core';
+import { RouterLink } from '@angular/router'; // ✅ Import this
 
 @Component({
   selector: 'app-food-audit',
-  imports: [],
+  standalone: true,
+  imports: [RouterLink], // ✅ Add RouterLink here
   templateUrl: './food-audit.component.html',
-  styleUrl: './food-audit.component.scss'
+  styleUrls: ['./food-audit.component.scss']
 })
-export class FoodAuditComponent {
-
-}
+export class FoodAuditComponent {}
