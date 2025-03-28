@@ -1,51 +1,68 @@
+<!-- Top Toolbar (Full Width) -->
+<app-toolbar class="top-toolbar" [title]="'Food Audit'" [icon]="'restaurant'"></app-toolbar>
+
+<!-- Below: Side Navigation and Main Content -->
 <mat-sidenav-container class="main-container">
-    <!-- 1. Left Sidebar Navigation -->
-    <mat-sidenav #sidenav mode="side" opened class="nav-navigation">
-        <mat-nav-list class="side-nav-list">
-            <mat-list-item routerLink="../home">
-                <span class="material-symbols-outlined nav-icon">home</span>
-              <span class="nav-label">Home</span>
-            </mat-list-item>
-          
-            <mat-list-item routerLink="../organisation-searcher">
-              <span class="material-symbols-outlined nav-icon">search</span>
-              <span class="nav-label">Organisation Searcher</span>
-            </mat-list-item>
-          
-            <mat-list-item routerLink="../schemes-list">
-              <span class="material-symbols-outlined nav-icon">factory</span>
-              <span class="nav-label">Premise</span>
-            </mat-list-item>
-          
-            <mat-list-item routerLink="../invoices-outstanding-installation">
-              <span class="material-symbols-outlined nav-icon">paid</span>
-              <span class="nav-label">Outstanding Installation Invoices</span>
-            </mat-list-item>
-          
-            <mat-list-item routerLink="../invoices-outstanding-product">
-              <span class="material-symbols-outlined nav-icon">paid</span>
-              <span class="nav-label">Outstanding Product Invoices</span>
-            </mat-list-item>
-          
-            <mat-list-item routerLink="../incident-searcher">
-              <span class="material-symbols-outlined nav-icon">emergency</span>
-              <span class="nav-label">Incidents</span>
-            </mat-list-item>
-          </mat-nav-list>
-    </mat-sidenav>
-  
-    <!-- 2. Main Page Area -->
-    <mat-sidenav-content>
-      <!-- Top Toolbar -->
-      <app-toolbar [title]="'Food Audit'" [icon]="'restaurant'"></app-toolbar>
+  <!-- Sidebar -->
+  <mat-sidenav #sidenav mode="side" opened class="nav-navigation">
+    <mat-nav-list class="side-nav-list">
+      <mat-list-item routerLink="../home">
+        <span class="material-symbols-outlined nav-icon">home</span>
+        <span class="nav-label">Home</span>
+      </mat-list-item>
 
-    </mat-sidenav-content>
-  </mat-sidenav-container>
+      <mat-list-item routerLink="../organisation-searcher">
+        <span class="material-symbols-outlined nav-icon">search</span>
+        <span class="nav-label">Organisation Searcher</span>
+      </mat-list-item>
 
-        <!-- Page Content -->
-        <div class="page-content">
-            <a [routerLink]="['/']" class="back-link">
-              <span class="material-symbols-outlined" style="vertical-align: middle;">arrow_back</span>
-              Back to Home
-            </a>
+      <mat-list-item routerLink="../schemes-list">
+        <span class="material-symbols-outlined nav-icon">factory</span>
+        <span class="nav-label">Premise</span>
+      </mat-list-item>
+
+      <mat-list-item routerLink="../invoices-outstanding-installation">
+        <span class="material-symbols-outlined nav-icon">paid</span>
+        <span class="nav-label">Outstanding Installation Invoices</span>
+      </mat-list-item>
+
+      <mat-list-item routerLink="../invoices-outstanding-product">
+        <span class="material-symbols-outlined nav-icon">paid</span>
+        <span class="nav-label">Outstanding Product Invoices</span>
+      </mat-list-item>
+
+      <mat-list-item routerLink="../incident-searcher">
+        <span class="material-symbols-outlined nav-icon">emergency</span>
+        <span class="nav-label">Incidents</span>
+      </mat-list-item>
+    </mat-nav-list>
+  </mat-sidenav>
+
+  <!-- Main Content Area -->
+  <mat-sidenav-content>
+    <div class="content-wrapper">
+
+      <!-- ✅ Dashed Box - Dashboard Overview -->
+      <div class="page-content">
+        <div class="top-content-container">
+          <h2>Dashboard Overview</h2>
+          <p>Add your stats, charts, filters here.</p>
         </div>
+      </div>
+
+      <!-- ✅ Back to Home Link - outside the box -->
+      <div class="back-home-container">
+        <a [routerLink]="['/']" class="back-link">
+          <span class="material-symbols-outlined">arrow_back</span>
+          Back to Home
+        </a>
+      </div>
+
+      <!-- ✅ Main Routed Content -->
+      <div class="main-routed-content">
+        <router-outlet></router-outlet>
+      </div>
+
+    </div>
+  </mat-sidenav-content>
+</mat-sidenav-container>

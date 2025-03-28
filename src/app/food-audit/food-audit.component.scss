@@ -1,32 +1,28 @@
+/* Container holding toolbar and sidenav */
 .main-container {
-    height: 100vh;
+    height: calc(100vh - 64px); /* Adjust if toolbar height changes */
     border: 2px solid #ccc; /* Optional: outer border for full layout */
   }
   
-  .nav-navigation {
-    width: 220px;
-    background-color: #f5f5f5;
-    border-right: 2px solid #ccc; /* Vertical divider */
-  }
-  
-  mat-sidenav-content {
-    display: flex;
-    flex-direction: column;
-    border-left: 2px solid #eee;
+  /* Top toolbar bar styles */
+  .top-toolbar {
+    width: 100%;
+    position: sticky; /* Optional: keep it on scroll */
+    top: 0;
+    z-index: 1000;
   }
   
   app-toolbar {
-    border-bottom: 2px solid #ccc; /* Horizontal divider under toolbar */
+    border-bottom: 2px solid #ccc; /* Divider below the top toolbar */
   }
   
-  .page-content {
-    padding: 20px;
-    border: 2px dashed #ddd; /* Optional: border around page content */
-    margin: 20px;
-    border-radius: 8px;
-    background-color: #fff;
+  /* Sidebar (left menu) */
+  .nav-navigation {
+    width: 220px;
+    background-color: #f5f5f5;
+    border-right: 2px solid #ccc;
   }
-
+  
   .side-nav-list {
     padding: 10px;
   }
@@ -53,4 +49,52 @@
   .nav-label {
     font-size: 15px;
     color: #000;
+  }
+  
+  /* Main content wrapper area */
+  mat-sidenav-content {
+    display: flex;
+    flex-direction: column;
+    border-left: 2px solid #eee;
+  }
+  
+  /* Wrapper around content (dashboard + back-home + router outlet) */
+  .content-wrapper {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  /* 📦 Dashed box containing Dashboard content only */
+  .page-content {
+    padding: 20px;
+    margin: 20px;
+    border-radius: 8px;
+    background-color: transparent;
+    border: none; /* No border here */
+  }
+  
+  .top-content-container {
+    padding: 16px;
+    background-color: #fff;
+    border: 2px dashed #ccc;
+    border-radius: 8px;
+  }
+  
+  /* 🔙 Back to Home section (outside the box) */
+  .back-home-container {
+    margin: 0 20px 16px 20px; /* Align with content box */
+    padding-left: 4px;
+  }
+  
+  .back-link {
+    display: inline-flex;
+    align-items: center;
+    text-decoration: none;
+    color: #5e35b1;
+    font-weight: 500;
+  }
+  
+  /* Main page content rendered from router */
+  .main-routed-content {
+    padding: 0 20px 20px 20px;
   }
