@@ -1,3 +1,4 @@
+
 <!-- Top Toolbar (Full Width) -->
 <app-toolbar class="top-toolbar" [title]="'Food Audit'" [icon]="'restaurant'"></app-toolbar>
 
@@ -42,20 +43,40 @@
   <mat-sidenav-content>
     <div class="content-wrapper">
 
-      <!-- ✅ Dashed Box - Dashboard Overview -->
+      <!-- Dashed Box - Dashboard Overview -->
       <div class="page-content">
 
         <div class="top-content-container">
           <h2>Premises</h2>
-          <p></p>
+          <div class="align-items-center">
+            <span>Premise Description</span>
         </div>
+        </div>
+        
+        <mat-card class="mr-20">
+            <mat-card-content>
+                <div class="seach-filter-grid">
+                    <!-- <mat-form-field>
+                        <mat-label>Premise Description</mat-label>
+                    </mat-form-field>
+                    <mat-form-field style="width: 500px">
+                        <mat-label>Premise Type</mat-label>
+                    </mat-form-field> -->
+                </div>
+                <div class="d-flex justify-start mb-15">
+                    <button mat-raised-button color="primary">Search</button>
+                    <button mat-raised-button class="ml-10">Reset</button>
+                </div>
+            </mat-card-content>
+        </mat-card>
+
+
         <div class="top-content-container">
             <h2></h2>
             <p></p>
           </div>
-
-
     </div>
+
 </div>
 
       <!-- ✅ Back to Home Link - outside the box -->
