@@ -49,34 +49,47 @@
         <div class="top-content-container">
           <h2>Premises</h2>
           <div class="align-items-center">
+            <span>Premise Type</span>
+        </div>
+          <div class="align-items-center">
             <span>Premise Description</span>
         </div>
-        </div>
-        
+    
+        <!-- Search and Reset Buttons -->
         <mat-card class="mr-20">
-            <mat-card-content>
-                <div class="seach-filter-grid">
-                    <!-- <mat-form-field>
-                        <mat-label>Premise Description</mat-label>
-                    </mat-form-field>
-                    <mat-form-field style="width: 500px">
-                        <mat-label>Premise Type</mat-label>
-                    </mat-form-field> -->
-                </div>
-                <div class="d-flex justify-start mb-15">
-                    <button mat-raised-button color="primary">Search</button>
-                    <button mat-raised-button class="ml-10">Reset</button>
-                </div>
-            </mat-card-content>
-        </mat-card>
+          <mat-card-content>
+              <div class="seach-filter-grid">
+              </div>
+              <div class="d-flex justify-start mb-15">
+                  <button mat-raised-button color="primary">Search</button>
+                  <button mat-raised-button class="ml-10">Reset</button>
+              </div>
+          </mat-card-content>
+      </mat-card>
+      
+        </div>
 
+        @if(premises)
+        {
+          <table mat-table [dataSource]="premises" class="mat-elevation-z8">
+            <ng-container matColumnDef="id">
+                <th mat-header-cell *matHeaderCellDef>Premises</th>
+                <td mat-cell *matCellDef="let p">
+                    <a class="mode-responsive-link">{{p.id}}</a>
+                </td>
+            </ng-container>
+  
+            <tr mat-header-row *matHeaderRowDef="tableColumns" class="primary-theme-colour"></tr>
+            <tr mat-row class="my-table-row" *matRowDef="let rec; columns: tableColumns"></tr>
+        </table>
+        }
+        
 
         <div class="top-content-container">
             <h2></h2>
             <p></p>
           </div>
     </div>
-
 </div>
 
       <!-- ✅ Back to Home Link - outside the box -->

@@ -11,12 +11,10 @@ import { ToolbarComponent } from '../toolbar/toolbar.component'; // ✅ Update p
   standalone: true, // ✅ This is required
   imports: [
     RouterLink,
-    RouterOutlet,
     MatSidenavModule,
     MatListModule,
     MatIconModule,
-    MatCardModule,
-    ToolbarComponent
+    MatCardModule
   ],
   templateUrl: './food-surveillance.component.html',
   styleUrls: ['./food-surveillance.component.scss'] // ✅ fixed typo
