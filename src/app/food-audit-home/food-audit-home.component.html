@@ -12,6 +12,7 @@
         <span class="nav-label">Home</span>
       </mat-list-item>
 
+    
       <mat-list-item routerLink="../organisation-searcher">
         <span class="material-symbols-outlined nav-icon">search</span>
         <span class="nav-label">Organisation Searcher</span>
@@ -48,48 +49,87 @@
 
         <div class="top-content-container">
           <h2>Premises</h2>
-          <div class="align-items-center">
-            <span>Premise Type</span>
-        </div>
-          <div class="align-items-center">
-            <span>Premise Description</span>
-        </div>
-    
-        <!-- Search and Reset Buttons -->
-        <mat-card class="mr-20">
-          <mat-card-content>
-              <div class="seach-filter-grid">
-              </div>
-              <div class="d-flex justify-start mb-15">
-                  <button mat-raised-button color="primary">Search</button>
-                  <button mat-raised-button class="ml-10">Reset</button>
-              </div>
-          </mat-card-content>
-      </mat-card>
-      
-        </div>
-
-        @if(premises)
-        {
-          <table mat-table [dataSource]="premises" class="mat-elevation-z8">
-            <ng-container matColumnDef="id">
-                <th mat-header-cell *matHeaderCellDef>Premises</th>
-                <td mat-cell *matCellDef="let p">
-                    <a class="mode-responsive-link">{{p.id}}</a>
-                </td>
-            </ng-container>
-  
-            <tr mat-header-row *matHeaderRowDef="tableColumns" class="primary-theme-colour"></tr>
-            <tr mat-row class="my-table-row" *matRowDef="let rec; columns: tableColumns"></tr>
-        </table>
-        }
         
+          <!-- Row layout: Description first, then Type -->
+          <div class="search-filter-row">
+            <!-- Premise Description First -->
+            <div class="filter-field">
+              <label for="premiseDescription">Premise Description</label>
+              <input type="text" id="premiseDescription" name="premiseDescription" placeholder="Enter description">
+            </div>
+        
+            <!-- Premise Type Second -->
+            <div class="filter-field">
+              <label for="premiseType">Premise Type</label>
+              <select id="premiseType" name="premiseType">
+                <!-- Example options -->
+                <option value="">Select a type</option>
+                <option value="hospital">Meals on Wheels</option>
+                <option value="clinic">Public Hospital - Large</option>
+                <option value="clinic">Aged Care</option>
+                
+              </select>
+            </div>
+          </div>
+        
+          
+          <!-- Buttons -->
+          <div class="button-row">
+            <button type="button" onclick="onSearch()">Search</button>
+            <button type="button" onclick="onReset()">Reset</button>
+          </div>
+        </div>
 
         <div class="top-content-container">
-            <h2></h2>
-            <p></p>
-          </div>
-    </div>
+          <h2></h2>
+          <p></p>
+        </div>
+
+        <div *ngIf="premises && premises.length > 0">
+          <table mat-table [dataSource]="premises" class="mat-elevation-z8">
+        
+            <!-- Premises -->
+            <ng-container matColumnDef="premises">
+              <th mat-header-cell *matHeaderCellDef>Premises</th>
+              <td mat-cell *matCellDef="let p">
+                <a class="mode-responsive-link">{{ p.premises }}</a>
+              </td>
+            </ng-container>
+        
+            <!-- Premise Types-->
+            <ng-container matColumnDef="premisetypes">
+              <th mat-header-cell *matHeaderCellDef>Premise Types</th>
+              <td mat-cell *matCellDef="let p">
+                {{ p.premisetypes }}
+              </td>
+            </ng-container>
+        
+                <!-- Premise Types-->
+                <ng-container matColumnDef="createdby">
+                  <th mat-header-cell *matHeaderCellDef>Created By</th>
+                  <td mat-cell *matCellDef="let p">
+                    {{ p.createdby }}
+                  </td>
+                </ng-container>
+
+                    <!-- Premise Types-->
+            <ng-container matColumnDef="createddate">
+              <th mat-header-cell *matHeaderCellDef>Created Date</th>
+              <td mat-cell *matCellDef="let p">
+                {{ p.premisetypes }}
+              </td>
+            </ng-container>
+
+            <!-- Header and Row Definitions -->
+            <tr mat-header-row *matHeaderRowDef="premisescolumns" class="primary-theme-colour"></tr>
+            <tr mat-row *matRowDef="let rec; columns: premisescolumns" class="my-table-row"></tr>
+        
+          </table>
+        </div>
+
+
+
+        </div>
 </div>
 
       <!-- ✅ Back to Home Link - outside the box -->

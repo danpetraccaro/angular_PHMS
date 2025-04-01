@@ -1,17 +1,14 @@
+import { CommonModule, getLocaleDateFormat } from '@angular/common';
 import { Component } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { MatTableModule } from '@angular/material/table';
 import { RouterLink, RouterModule } from '@angular/router';
 import { ToolbarComponent } from '../toolbar/toolbar.component'; // Adjust the path as needed
-import { MatFormField } from '@angular/material/form-field';
-import { MatTableModule } from '@angular/material/table';
 // Import Angular Material modules
-import { MatSidenavModule } from '@angular/material/sidenav';
-import { MatListModule } from '@angular/material/list';
-import { MatIconModule } from '@angular/material/icon';
 import { MatCardModule } from '@angular/material/card';
-import { MatToolbarModule } from '@angular/material/toolbar';
-import { TPremise } from '../types/premise';
-
+import { MatIconModule } from '@angular/material/icon';
+import { MatListModule } from '@angular/material/list';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { TPremises } from '../types/premises';
 
 
 @Component({
@@ -22,7 +19,7 @@ import { TPremise } from '../types/premise';
     RouterModule,
     RouterLink,
     ToolbarComponent,
-    MatSidenavModule, // Import MatSidenavModule here
+    MatSidenavModule,
     MatListModule,
     MatIconModule,
     MatCardModule,
@@ -31,16 +28,13 @@ import { TPremise } from '../types/premise';
   templateUrl: './food-audit-home.component.html',
   styleUrls: ['./food-audit-home.component.scss']
 })
+
 export class FoodAuditHomeComponent {
-  // Component logic here
+  public premisescolumns: string[] = ['premises', 'premisetypes', 'createdby', 'createddate'];
 
-  public tableColumns: string[] = ['id'];
-
-
-  public premises: TPremise[] = [{
-    id: 1
-  },
-  {
-    id: 2
-  }]
+  public premises: TPremises[] = [
+    { premises: 'food', premisetypes: 'hospital', createdby: 'Peter Pan', createddate: '11/11/2024' },
+    { premises: 'food2', premisetypes: 'hospital', createdby: 'Peter Pan', createddate: '11/11/2024'  }
+    
+  ];
 }
