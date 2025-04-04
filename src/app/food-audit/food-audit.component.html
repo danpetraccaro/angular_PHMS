@@ -1,0 +1,15 @@
+<p>food-audit page!</p>
+
+
+ <!-- ✅ Back to Home Link - outside the box -->
+ <div class="back-home-container">
+    <a [routerLink]="['/']" class="back-link">
+      <span class="material-symbols-outlined">arrow_back</span>
+      Back to Home
+    </a>
+  </div>
+
+  <!-- ✅ Main Routed Content -->
+  <div class="main-routed-content">
+    <router-outlet></router-outlet>
+  </div>
