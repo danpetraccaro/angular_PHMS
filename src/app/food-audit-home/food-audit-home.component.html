@@ -1,6 +1,6 @@
 
 <!-- Top Toolbar (Full Width) -->
-<app-toolbar class="top-toolbar" [title]="'Food Audit'" [icon]="'restaurant'"></app-toolbar>
+<app-toolbar class="top-toolbar" [title]="'Food Audit'" [icon]="'Fact_Check'"></app-toolbar>
 
 <!-- Below: Side Navigation and Main Content -->
 <mat-sidenav-container class="main-container">
@@ -11,7 +11,6 @@
         <span class="material-symbols-outlined nav-icon">home</span>
         <span class="nav-label">Home</span>
       </mat-list-item>
-
     
       <mat-list-item routerLink="../organisation-searcher">
         <span class="material-symbols-outlined nav-icon">search</span>
@@ -19,24 +18,26 @@
       </mat-list-item>
 
       <mat-list-item routerLink="../schemes-list">
-        <span class="material-symbols-outlined nav-icon">factory</span>
-        <span class="nav-label">Premise</span>
+        <span class="material-symbols-outlined nav-icon">search</span>
+        <span class="nav-label">Premises Searcher</span>
       </mat-list-item>
 
       <mat-list-item routerLink="../invoices-outstanding-installation">
         <span class="material-symbols-outlined nav-icon">paid</span>
-        <span class="nav-label">Outstanding Installation Invoices</span>
+        <span class="nav-label">Outstanding Invoices</span>
       </mat-list-item>
 
-      <mat-list-item routerLink="../invoices-outstanding-product">
-        <span class="material-symbols-outlined nav-icon">paid</span>
-        <span class="nav-label">Outstanding Product Invoices</span>
+      <mat-list-item routerLink="../invoices-outstanding-installation">
+        <span class="material-symbols-outlined nav-icon">book</span>
+        <span class="nav-label">Events</span>
       </mat-list-item>
 
-      <mat-list-item routerLink="../incident-searcher">
-        <span class="material-symbols-outlined nav-icon">emergency</span>
-        <span class="nav-label">Incidents</span>
+
+      <mat-list-item routerLink="../invoices-outstanding-installation">
+        <span class="material-symbols-outlined nav-icon">ad</span>
+        <span class="nav-label">Audit Schedule</span>
       </mat-list-item>
+
     </mat-nav-list>
   </mat-sidenav>
 
@@ -54,7 +55,7 @@
           <div class="search-filter-row">
             <!-- Premise Description First -->
             <div class="filter-field">
-              <label for="premiseDescription">Premise Description</label>
+              <label for="premiseDescription">Premise Name</label>
               <input type="text" id="premiseDescription" name="premiseDescription" placeholder="Enter description">
             </div>
         
@@ -103,20 +104,20 @@
                 {{ p.premisetypes }}
               </td>
             </ng-container>
-        
-                <!-- Premise Types-->
-                <ng-container matColumnDef="createdby">
-                  <th mat-header-cell *matHeaderCellDef>Created By</th>
-                  <td mat-cell *matCellDef="let p">
-                    {{ p.createdby }}
-                  </td>
-                </ng-container>
+      
+              <!-- Premise Types-->
+              <ng-container matColumnDef="proprietor">
+                <th mat-header-cell *matHeaderCellDef>Proprietor</th>
+                <td mat-cell *matCellDef="let p">
+                  {{ p.proprietor }}
+                </td>
+              </ng-container>
 
                     <!-- Premise Types-->
-            <ng-container matColumnDef="createddate">
-              <th mat-header-cell *matHeaderCellDef>Created Date</th>
+            <ng-container matColumnDef="auditor">
+              <th mat-header-cell *matHeaderCellDef>Auditor</th>
               <td mat-cell *matCellDef="let p">
-                {{ p.premisetypes }}
+                {{ p.auditor }}
               </td>
             </ng-container>
 

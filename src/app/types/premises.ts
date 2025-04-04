@@ -1,6 +1,6 @@
 export type TPremises = {
     premises: string;
     premisetypes: string; 
-    createdby: string;
-    createddate: string;
+    proprietor: string;
+    auditor: string;
   };

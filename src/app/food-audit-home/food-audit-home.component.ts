@@ -29,12 +29,30 @@ import { TPremises } from '../types/premises';
   styleUrls: ['./food-audit-home.component.scss']
 })
 
+// OBJECT
 export class FoodAuditHomeComponent {
-  public premisescolumns: string[] = ['premises', 'premisetypes', 'createdby', 'createddate'];
 
-  public premises: TPremises[] = [
-    { premises: 'food', premisetypes: 'hospital', createdby: 'Peter Pan', createddate: '11/11/2024' },
-    { premises: 'food2', premisetypes: 'hospital', createdby: 'Peter Pan', createddate: '11/11/2024'  }
-    
-  ];
+  // PROPERTIES
+  public premisescolumns: string[];
+  public premises: TPremises[];
+
+  // CONSTRUCTOR
+  constructor() {
+    this.premisescolumns = ['premises', 'premisetypes', 'proprietor', 'auditor'];
+
+    this.premises = [
+      {
+        premises: 'Kangaroo Island Eggs',
+        premisetypes: 'Egg Processor',
+        proprietor: 'Peter Pan',
+        auditor: 'Tina Marie Aghiana'
+      },
+      {
+        premises: 'Coffin Bay Oysers',
+        premisetypes: 'Seafood Bivalve Mollusc',
+        proprietor: 'Rodger Rabbit',
+        auditor: 'Tina Marie Aghiana'
+      }
+    ];
+  }
 }
