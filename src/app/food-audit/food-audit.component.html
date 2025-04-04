@@ -1,15 +1,85 @@
-<p>food-audit page!</p>
+<!-- Toolbar (optional) -->
+<app-toolbar [title]="'Kangaroo Island Eggs'" [icon]="'store'"></app-toolbar>
 
 
- <!-- ✅ Back to Home Link - outside the box -->
- <div class="back-home-container">
-    <a [routerLink]="['/']" class="back-link">
-      <span class="material-symbols-outlined">arrow_back</span>
-      Back to Home
-    </a>
+<!-- Main Form -->
+<div class="details-section">
+  <div class="row">
+    <mat-form-field appearance="fill" class="field">
+      <mat-label>Premise Type</mat-label>
+      <input matInput value="Egg Processor" disabled>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill" class="field">
+      <mat-label>Organisation</mat-label>
+      <input matInput value="Kangaroo Iland Egg Corporation" disabled>
+    </mat-form-field>
   </div>
 
-  <!-- ✅ Main Routed Content -->
-  <div class="main-routed-content">
-    <router-outlet></router-outlet>
+  <div class="row">
+    <mat-form-field appearance="fill" class="field">
+      <mat-label>Description</mat-label>
+      <input matInput value="Egg Manufacturer" disabled>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill" class="field">
+      <mat-label>Trading Name</mat-label>
+      <input matInput value="Kangaroo Island Eggs" disabled>
+    </mat-form-field>
   </div>
+
+  <div class="row">
+    <mat-form-field appearance="fill" class="field">
+      <mat-label>BPAY Reference</mat-label>
+      <input matInput value="PH002xx" disabled>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill" class="field">
+      <mat-label>Debtor Number</mat-label>
+      <input matInput value="42434324324" disabled>
+    </mat-form-field>
+  </div>
+
+  <div class="row">
+    <mat-form-field appearance="fill" class="field">
+      <mat-label>Registration Number</mat-label>
+      <input matInput value="112433" disabled>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill" class="field">
+      <mat-label>ABN</mat-label>
+      <input matInput value="" disabled>
+    </mat-form-field>
+  </div>
+
+  <!-- Action Buttons -->
+  <div class="button-group">
+    <button mat-raised-button color="warn">Close Premises</button>
+    <button mat-raised-button color="primary">Edit</button>
+  </div>
+</div>
+
+<!-- Accordion -->
+<mat-accordion>
+  <mat-expansion-panel>
+    <mat-expansion-panel-header>
+      <mat-panel-title>Addresses</mat-panel-title>
+    </mat-expansion-panel-header>
+    <p>Address content goes here...</p>
+  </mat-expansion-panel>
+
+  <mat-expansion-panel>
+    <mat-expansion-panel-header>
+      <mat-panel-title>System Information</mat-panel-title>
+    </mat-expansion-panel-header>
+    <p>System information goes here...</p>
+  </mat-expansion-panel>
+</mat-accordion>
+
+<!-- Back Link -->
+<div class="back-home-container">
+  <a [routerLink]="['/']" class="back-link">
+    <span class="material-symbols-outlined">arrow_back</span>
+    Back to Home
+  </a>
+</div>
