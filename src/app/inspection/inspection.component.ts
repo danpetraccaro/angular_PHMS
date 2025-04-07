@@ -1,13 +1,44 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
-import { RouterLink } from '@angular/router';
+import { RouterLink, RouterModule } from '@angular/router';
+import { ToolbarComponent } from '../toolbar/toolbar.component';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatTabsModule } from '@angular/material/tabs';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatExpansionModule } from '@angular/material/expansion';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatListModule } from '@angular/material/list';
+import { MatIconModule } from '@angular/material/icon';
+import { MatCardModule } from '@angular/material/card';
+import { MatTableModule } from '@angular/material/table';
+import { MatInputModule } from '@angular/material/input';
 
 @Component({
   selector: 'app-inspection',
-  imports: [RouterLink, CommonModule],
+  standalone: true,
+  imports: [
+    CommonModule,
+    RouterLink,
+    ToolbarComponent,
+    MatToolbarModule,
+    MatTabsModule,
+    MatFormFieldModule,
+    MatExpansionModule,
+    CommonModule,
+    RouterModule,
+    RouterLink,
+    ToolbarComponent,
+    MatSidenavModule,
+    MatListModule,
+    MatIconModule,
+    MatCardModule,
+    MatTableModule,
+    MatTabsModule,
+    MatExpansionModule,
+    MatFormFieldModule,
+    MatInputModule
+  ],
   templateUrl: './inspection.component.html',
-  styleUrl: './inspection.component.scss'
+  styleUrls: ['./inspection.component.scss'] // ✅ Fixed here
 })
-export class InspectionComponent {
-
-}
+export class InspectionComponent {}
