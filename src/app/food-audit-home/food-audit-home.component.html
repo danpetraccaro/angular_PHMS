@@ -59,6 +59,17 @@
               <input type="text" id="premiseDescription" name="premiseDescription" placeholder="Enter description">
             </div>
         
+            <div class="filter-field">
+              <label for="premiseDescription">Council</label>
+              <input type="text" id="premiseDescription" name="premiseDescription" placeholder="Enter council">
+            </div>
+
+            <div class="filter-field">
+              <label for="premiseDescription">Auditor</label>
+              <input type="text" id="premiseDescription" name="premiseDescription" placeholder="Enter auditor">
+            </div>
+        
+
             <!-- Premise Type Second -->
             <div class="filter-field">
               <label for="premiseType">Premise Type</label>
@@ -106,10 +117,18 @@
                 {{ p.premisetypes }}
               </td>
             </ng-container>
-      
+
+               <!-- Premise Types-->
+               <ng-container matColumnDef="council">
+                <th mat-header-cell *matHeaderCellDef>Council</th>
+                <td mat-cell *matCellDef="let p">
+                  {{ p.council }}
+                </td>
+              </ng-container>
+            
               <!-- Premise Types-->
               <ng-container matColumnDef="proprietor">
-                <th mat-header-cell *matHeaderCellDef>Proprietor</th>
+                <th mat-header-cell *matHeaderCellDef>Organisation</th>
                 <td mat-cell *matCellDef="let p">
                   {{ p.proprietor }}
                 </td>

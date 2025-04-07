@@ -1,55 +1,7 @@
-.audit-header {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    margin: 1rem 0;
-  
-    .icon {
-      font-size: 36px;
-      color: #e53935;
-    }
-  
-    .title {
-      flex-grow: 1;
-      font-size: 24px;
-      font-weight: bold;
-      margin: 0;
-    }
-  
-    .status {
-      font-weight: bold;
-      color: #333;
-    }
-  }
-  
-  .details-section {
+.details-section {
     padding: 1rem;
-  
-    .row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 1rem;
-      margin-bottom: 1rem;
-  
-      .field {
-        flex: 1;
-        min-width: 250px;
-      }
-    }
-  
-    .button-group {
-      display: flex;
-      justify-content: flex-end;
-      gap: 1rem;
-      margin-top: 1rem;
-    }
   }
   
-  mat-accordion {
-    margin-top: 1.5rem;
-  }
-  
-
   .row {
     display: flex;
     gap: 2rem;
@@ -61,3 +13,26 @@
     min-width: 250px;
   }
   
+  .button-group {
+    display: flex;
+    justify-content: flex-end;
+    gap: 1rem;
+    margin-top: 1rem;
+  }
+  
+  mat-accordion {
+    margin-top: 1.5rem;
+  }
+  
+  .back-home-container {
+    margin-top: 2rem;
+  }
+  
+  .back-link {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    text-decoration: none;
+    color: #5e35b1;
+    font-weight: bold;
+  }

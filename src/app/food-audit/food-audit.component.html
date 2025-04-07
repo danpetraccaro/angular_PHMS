@@ -1,80 +1,164 @@
 <!-- Toolbar (optional) -->
 <app-toolbar [title]="'Kangaroo Island Eggs'" [icon]="'store'"></app-toolbar>
 
-
-<!-- Main Form -->
+<!-- Action Buttons -->
 <div class="details-section">
-  <div class="row">
-    <mat-form-field appearance="fill" class="field">
-      <mat-label>Premise Type</mat-label>
-      <input matInput value="Egg Processor" disabled>
-    </mat-form-field>
-
-    <mat-form-field appearance="fill" class="field">
-      <mat-label>Organisation</mat-label>
-      <input matInput value="Kangaroo Iland Egg Corporation" disabled>
-    </mat-form-field>
-  </div>
-
-  <div class="row">
-    <mat-form-field appearance="fill" class="field">
-      <mat-label>Description</mat-label>
-      <input matInput value="Egg Manufacturer" disabled>
-    </mat-form-field>
-
-    <mat-form-field appearance="fill" class="field">
-      <mat-label>Trading Name</mat-label>
-      <input matInput value="Kangaroo Island Eggs" disabled>
-    </mat-form-field>
-  </div>
-
-  <div class="row">
-    <mat-form-field appearance="fill" class="field">
-      <mat-label>BPAY Reference</mat-label>
-      <input matInput value="PH002xx" disabled>
-    </mat-form-field>
-
-    <mat-form-field appearance="fill" class="field">
-      <mat-label>Debtor Number</mat-label>
-      <input matInput value="42434324324" disabled>
-    </mat-form-field>
-  </div>
-
-  <div class="row">
-    <mat-form-field appearance="fill" class="field">
-      <mat-label>Registration Number</mat-label>
-      <input matInput value="112433" disabled>
-    </mat-form-field>
-
-    <mat-form-field appearance="fill" class="field">
-      <mat-label>ABN</mat-label>
-      <input matInput value="" disabled>
-    </mat-form-field>
-  </div>
-
-  <!-- Action Buttons -->
   <div class="button-group">
+    <button mat-raised-button color="warn">Register Premises</button>
     <button mat-raised-button color="warn">Close Premises</button>
     <button mat-raised-button color="primary">Edit</button>
   </div>
 </div>
 
-<!-- Accordion -->
-<mat-accordion>
-  <mat-expansion-panel>
-    <mat-expansion-panel-header>
-      <mat-panel-title>Addresses</mat-panel-title>
-    </mat-expansion-panel-header>
-    <p>Address content goes here...</p>
-  </mat-expansion-panel>
 
-  <mat-expansion-panel>
-    <mat-expansion-panel-header>
-      <mat-panel-title>System Information</mat-panel-title>
-    </mat-expansion-panel-header>
-    <p>System information goes here...</p>
-  </mat-expansion-panel>
-</mat-accordion>
+<!-- Tabbed Navigation Section -->
+<mat-tab-group>
+    <mat-tab label="Details">
+      <!-- Details content here -->
+      <p></p>
+    </mat-tab>
+  
+    <mat-tab label="Comments">
+      <!-- Comments content here -->
+      <p></p>
+    </mat-tab>
+  
+    <mat-tab label="Contacts">
+      <!-- Contacts content here -->
+      <p></p>
+    </mat-tab>
+  
+    <mat-tab label="Attachments">
+      <!-- Attachments content here -->
+      <p></p>
+    </mat-tab>
+  
+    <mat-tab label="Inspections">
+      <!-- Inspections content here -->
+      <p></p>
+    </mat-tab>
+  
+    <mat-tab label="Inspection Schedule">
+        <!-- Inspections content here -->
+        <p></p>
+      </mat-tab>
+  
+      
+    <mat-tab label="Invoices">
+      <!-- Invoices content here -->
+      <p></p>
+    </mat-tab>
+
+    <mat-tab label="Audit Journal">
+      <!-- Audit Journal content here -->
+      <p></p>
+    </mat-tab>
+  </mat-tab-group>
+
+<!-- Main Form -->
+<div class="details-section">
+
+    <!-- First row with 4 fields -->
+
+    <div class="row">
+        <mat-form-field appearance="fill" class="field">
+            <mat-label>Trading Name</mat-label>
+            <input matInput value="Kangaroo Island Eggs" disabled>
+        </mat-form-field>
+
+        <mat-form-field appearance="fill" class="field">
+            <mat-label>Premise Type</mat-label>
+            <input matInput value="Egg Processor" disabled>
+        </mat-form-field>
+    
+        <mat-form-field appearance="fill" class="field">
+            <mat-label>Organisation</mat-label>
+            <input matInput value="Kangaroo Island Egg Corporation" disabled>
+        </mat-form-field>
+
+        <mat-form-field appearance="fill" class="field">
+            <mat-label>Risk</mat-label>
+            <input matInput value="P4" disabled>
+        </mat-form-field>
+    </div>
+
+
+    <!-- First row with 4 fields -->
+    <div class="row">
+        <mat-form-field appearance="fill" class="field">
+          <mat-label>Primary Contact</mat-label>
+          <input matInput value="Humpty Dumpty" disabled>
+        </mat-form-field>
+    
+        <mat-form-field appearance="fill" class="field">
+          <mat-label>Premise Address</mat-label>
+          <input matInput value="'The Wall. 11 Wall Street. Kingston SA 2334'" disabled>
+        </mat-form-field>
+    
+        <mat-form-field appearance="fill" class="field">
+          <mat-label>Postal Address</mat-label>
+          <input matInput value="PO Box 1232. Kingston. SA 2483" disabled>
+        </mat-form-field>
+      </div>
+  
+      
+    <!-- Second row with 4 fields -->
+    <div class="row">
+        <mat-form-field appearance="fill" class="field">
+            <mat-label>Audit Frequency</mat-label>
+            <input matInput value="12 Monthly" disabled>
+        </mat-form-field>
+
+    </div>
+
+
+    <div class="row">
+        <mat-form-field appearance="fill" class="field">
+            <mat-label>Details</mat-label>
+            <input matInput value="Samonella outbreak 11/02/2021." disabled>
+        </mat-form-field>
+    </div>
+
+  
+  </div>
+
+
+  <!-- Summary Fields -->
+<mat-accordion>
+    <mat-expansion-panel>
+      <mat-expansion-panel-header>
+        <mat-panel-title>Additional Fields</mat-panel-title>
+      </mat-expansion-panel-header>
+
+
+      <mat-form-field appearance="fill" class="field">
+        <mat-label>Auditor</mat-label>
+        <input matInput value="Tina Marie Agahiana" disabled>
+      </mat-form-field>
+
+      <mat-form-field appearance="fill" class="field">
+        <mat-label>Council</mat-label>
+        <input matInput value="Port Lincoln District" disabled>
+      </mat-form-field>
+    </mat-expansion-panel>
+
+    <mat-expansion-panel>
+      <mat-expansion-panel-header>
+        <mat-panel-title>System Information</mat-panel-title>
+      </mat-expansion-panel-header>
+      <p>System information goes here...</p>
+    </mat-expansion-panel>
+  </mat-accordion>
+
+  <mat-accordion>
+    <mat-expansion-panel>
+      <mat-expansion-panel-header>
+        <mat-panel-title>Addresses</mat-panel-title>
+      </mat-expansion-panel-header>
+      <p>Address content goes here...</p>
+    </mat-expansion-panel>
+
+
 
 <!-- Back Link -->
 <div class="back-home-container">
