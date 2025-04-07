@@ -11,49 +11,23 @@
 </div>
 
 
-<!-- Tabbed Navigation Section -->
-<mat-tab-group>
-    <mat-tab label="Details">
-      <!-- Details content here -->
-      <p></p>
-    </mat-tab>
+<mat-tab-group (selectedTabChange)="onTabChange($event)">
+    <mat-tab label="Details"><p></p></mat-tab>
+    <mat-tab label="Comments"><p></p></mat-tab>
+    <mat-tab label="Contacts"><p></p></mat-tab>
+    <mat-tab label="Attachments"><p></p></mat-tab>
   
-    <mat-tab label="Comments">
-      <!-- Comments content here -->
-      <p></p>
-    </mat-tab>
-  
-    <mat-tab label="Contacts">
-      <!-- Contacts content here -->
-      <p></p>
-    </mat-tab>
-  
-    <mat-tab label="Attachments">
-      <!-- Attachments content here -->
-      <p></p>
-    </mat-tab>
-  
+    <!-- Inspections tab -->
     <mat-tab label="Inspections">
-      <!-- Inspections content here -->
-      <p></p>
+      <!-- This content won't actually be used because we redirect -->
+      <p>Redirecting to inspections...</p>
     </mat-tab>
   
-    <mat-tab label="Inspection Schedule">
-        <!-- Inspections content here -->
-        <p></p>
-      </mat-tab>
-  
-      
-    <mat-tab label="Invoices">
-      <!-- Invoices content here -->
-      <p></p>
-    </mat-tab>
-
-    <mat-tab label="Audit Journal">
-      <!-- Audit Journal content here -->
-      <p></p>
-    </mat-tab>
+    <mat-tab label="Inspection Schedule"><p></p></mat-tab>
+    <mat-tab label="Invoices"><p></p></mat-tab>
+    <mat-tab label="Audit Journal"><p></p></mat-tab>
   </mat-tab-group>
+  
 
 <!-- Main Form -->
 <div class="details-section">
