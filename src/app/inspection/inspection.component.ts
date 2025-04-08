@@ -3,7 +3,7 @@ import { Component } from '@angular/core';
 import { RouterLink, RouterModule } from '@angular/router';
 import { ToolbarComponent } from '../toolbar/toolbar.component';
 import { MatToolbarModule } from '@angular/material/toolbar';
-import { MatTabsModule } from '@angular/material/tabs';
+import { MatTabChangeEvent, MatTabsModule } from '@angular/material/tabs';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { MatSidenavModule } from '@angular/material/sidenav';
@@ -36,9 +36,20 @@ import { MatInputModule } from '@angular/material/input';
     MatTabsModule,
     MatExpansionModule,
     MatFormFieldModule,
-    MatInputModule
+    MatInputModule,
+    MatTabChangeEvent
   ],
   templateUrl: './inspection.component.html',
   styleUrls: ['./inspection.component.scss'] // ✅ Fixed here
 })
-export class InspectionComponent {}
+
+
+
+export class InspectionComponent {
+
+
+
+  }
+
+
+

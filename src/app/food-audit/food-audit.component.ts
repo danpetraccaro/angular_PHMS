@@ -56,5 +56,10 @@ export class FoodAuditComponent {
       this.router.navigate(['/inspectionschedule']);
     }
 
+    if (event.index === 6) {
+      this.router.navigate(['/contact']);
+    }
+
+
   }
 }
