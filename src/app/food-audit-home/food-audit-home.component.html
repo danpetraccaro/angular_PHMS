@@ -49,7 +49,7 @@
       <div class="page-content">
 
         <div class="top-content-container">
-          <h2>Premises</h2>
+          <h2>Premises Searcher</h2>
         
           <!-- Row layout: Description first, then Type -->
           <div class="search-filter-row">
@@ -63,12 +63,6 @@
               <label for="premiseDescription">Council</label>
               <input type="text" id="premiseDescription" name="premiseDescription" placeholder="Enter council">
             </div>
-
-            <div class="filter-field">
-              <label for="premiseDescription">Auditor</label>
-              <input type="text" id="premiseDescription" name="premiseDescription" placeholder="Enter auditor">
-            </div>
-        
 
             <!-- Premise Type Second -->
             <div class="filter-field">
@@ -130,17 +124,11 @@
               <ng-container matColumnDef="proprietor">
                 <th mat-header-cell *matHeaderCellDef>Organisation</th>
                 <td mat-cell *matCellDef="let p">
-                  {{ p.proprietor }}
+                  <a [routerLink]="['/audit/detail']" class="mode-responsive-link">
+                    {{ p.proprietor }}
+                  </a>
                 </td>
               </ng-container>
-
-                    <!-- Premise Types-->
-            <ng-container matColumnDef="auditor">
-              <th mat-header-cell *matHeaderCellDef>Auditor</th>
-              <td mat-cell *matCellDef="let p">
-                {{ p.auditor }}
-              </td>
-            </ng-container>
 
             <!-- Header and Row Definitions -->
             <tr mat-header-row *matHeaderRowDef="premisescolumns" class="primary-theme-colour"></tr>

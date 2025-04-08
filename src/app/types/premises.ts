@@ -3,5 +3,4 @@ export type TPremises = {
     premisetypes: string; 
     council: string;
     proprietor: string;
-    auditor: string;
   };

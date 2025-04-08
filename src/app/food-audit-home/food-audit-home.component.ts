@@ -38,22 +38,20 @@ export class FoodAuditHomeComponent {
 
   // CONSTRUCTOR
   constructor() {
-    this.premisescolumns = ['premises', 'premisetypes', 'council', 'proprietor', 'auditor'];
+    this.premisescolumns = ['premises', 'premisetypes', 'council', 'proprietor'];
 
     this.premises = [
       {
         premises: 'Kangaroo Island Eggs',
         premisetypes: 'Egg Processor',
         council: 'charles sturt',
-        proprietor: 'Peter Pan',
-        auditor: 'Tina Marie Aghiana'
+        proprietor: 'Kangaroo Island Egg Corporation'
       },
       {
         premises: 'Southern Coffin Bay Oysers',
         premisetypes: 'Seafood Bivalve Mollusc',
         council: 'copper coast',
-        proprietor: 'Rodger Rabbit',
-        auditor: 'Tina Marie Aghiana'
+        proprietor: 'Kangaroo Island Egg Corporation'
       }
       
     ];
