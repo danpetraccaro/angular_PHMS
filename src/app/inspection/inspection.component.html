@@ -1,5 +1,91 @@
 <h1>View/Edit an Inspection Record: {{inspectionId}}</h1>
 
+
+<mat-tab-group>
+
+  <mat-tab label="Details">
+    <div class="button-group">
+    </div>
+    <div class="details-section">
+      <!-- First row with 4 fields -->
+      <div class="row">
+        <mat-form-field appearance="fill" class="field">
+          <mat-label>Trading Name</mat-label>
+          <input matInput value="Kangaroo Island Eggs" disabled>
+        </mat-form-field>
+        <mat-form-field appearance="fill" class="field">
+          <mat-label>Address</mat-label>
+          <input matInput value="23 Egg Street, Kingston. SA. 5009" disabled>
+        </mat-form-field>
+        <mat-form-field appearance="fill" class="field">
+          <mat-label>Type</mat-label>
+          <input matInput value="Public Hospital Medium" disabled>
+        </mat-form-field>
+      </div>
+
+
+      <!-- First row with 4 fields -->
+
+      <div class="row">
+        <mat-form-field appearance="fill" class="field">
+          <mat-label>Inspection Type</mat-label>
+          <input matInput value="SA Health Food Audit CheckList" disabled>
+        </mat-form-field>
+        <mat-form-field appearance="fill" class="field">
+          <mat-label>Date Inspected</mat-label>
+          <input matInput value="12/11/2024" disabled>
+        </mat-form-field>
+        <mat-form-field appearance="fill" class="field">
+          <mat-label>Time Compleated</mat-label>
+          <input matInput value="12:30" disabled>
+        </mat-form-field>
+      </div>
+
+    <div class="row">
+      <mat-form-field appearance="fill" class="field">
+        <mat-label>Reason</mat-label>
+        <input matInput value="--Pick Reason--" disabled>
+      </mat-form-field>
+      <mat-form-field appearance="fill" class="field">
+        <mat-label>Ref Number</mat-label>
+        <input matInput value="" disabled>
+      </mat-form-field>
+    </div>
+
+  <div class="row">
+    <mat-form-field appearance="fill" class="field">
+      <mat-label>Secondary Officer</mat-label>
+      <input matInput value="" disabled>
+    </mat-form-field>
+    <mat-form-field appearance="fill" class="field">
+      <mat-label>FoodSafe Score</mat-label>
+      <input matInput value="" disabled>
+    </mat-form-field>
+  </div>
+
+
+  <div class="row">
+    <mat-form-field appearance="fill" class="field">
+      <mat-label>Person Contacted</mat-label>
+      <input matInput value="" disabled>
+    </mat-form-field>
+    <mat-form-field appearance="fill" class="field">
+      <mat-label>Phone</mat-label>
+      <input matInput value="" disabled>
+    </mat-form-field>
+    <mat-form-field appearance="fill" class="field">
+      <mat-label>Position</mat-label>
+      <input matInput value="" disabled>
+    </mat-form-field>
+  </div>
+
+
+</div>
+
+
+  </mat-tab>
+</mat-tab-group>
+
 <div class="back-home-container">
     <a [routerLink]="['/']" class="back-link">
       <span class="material-symbols-outlined">arrow_back</span>
