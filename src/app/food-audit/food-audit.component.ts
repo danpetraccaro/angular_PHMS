@@ -1,25 +1,24 @@
-import { Component } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
 import { CommonModule } from '@angular/common';
-import { MatTableModule } from '@angular/material/table';
-import { RouterLink, RouterModule } from '@angular/router';
-import { ToolbarComponent } from '../toolbar/toolbar.component';
+import { Component, inject } from '@angular/core';
 import { MatCardModule } from '@angular/material/card';
-import { MatIconModule } from '@angular/material/icon';
-import { MatListModule } from '@angular/material/list';
-import { MatSidenavModule } from '@angular/material/sidenav';
-import { TPremises } from '../types/premises';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { MatFormFieldModule } from '@angular/material/form-field';
-import { MatTabsModule } from '@angular/material/tabs';
+import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
-import { MatTabChangeEvent } from '@angular/material/tabs';
+import { MatListModule } from '@angular/material/list';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatTableModule } from '@angular/material/table';
+import { MatTabsModule } from '@angular/material/tabs';
+import { ActivatedRoute, RouterLink, RouterModule } from '@angular/router';
+import { InspectionComponent } from '../inspection-list/inspection-list.component';
+import { ToolbarComponent } from '../toolbar/toolbar.component';
 
 @Component({
   selector: 'app-food-audit',
   standalone: true,
   imports: [
     CommonModule,
+    InspectionComponent,
     RouterModule,
     RouterLink,
     ToolbarComponent,
@@ -36,30 +35,12 @@ import { MatTabChangeEvent } from '@angular/material/tabs';
   templateUrl: './food-audit.component.html',
   styleUrl: './food-audit.component.scss'
 })
-export class FoodAuditComponent {
+export class FoodAuditComponent { 
 
-  constructor(
-    private route: ActivatedRoute,
-    private router: Router
-  ) {
+private route = inject(ActivatedRoute);
+
+  constructor( ) {
     const id = this.route.snapshot.paramMap.get('id');
-    console.log('Premises ID:', id);
   }
 
-  onTabChange(event: MatTabChangeEvent): void {
-    // Index 4 is the "Inspections" tab
-    if (event.index === 5) {
-      this.router.navigate(['/inspection']);
-    }
-
-    if (event.index === 6) {
-      this.router.navigate(['/inspectionschedule']);
-    }
-
-    if (event.index === 2) {
-      this.router.navigate(['/contact']);
-    }
-
-
-  }
 }

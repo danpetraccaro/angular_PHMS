@@ -6,9 +6,7 @@ export const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'surveillance', component: FoodSurveillanceComponent },
   { path: 'audit', loadComponent: () => import('./app/food-audit-home/food-audit-home.component').then(c => c.FoodAuditHomeComponent) },
-  { path: 'audit/detail', loadComponent: () => import('./app/food-audit/food-audit.component').then(c => c.FoodAuditComponent) },
-  { path: 'inspection', loadComponent: () => import('./app/inspection/inspection.component').then(m => m.InspectionComponent) },  // ✅ New
-  { path: 'inspectionschedule', loadComponent: () => import('./app/inspectionschedule/inspectionschedule.component').then(m => m.InspectionScheduleComponent) },
-  { path: 'contact', loadComponent: () => import('./app/contact/contact.component').then(m => m.ContactComponent), 
-}
+  { path: 'premise', loadComponent: () => import('./app/food-audit/food-audit.component').then(c => c.FoodAuditComponent) },
+  { path: 'contact', loadComponent: () => import('./app/contact/contact.component').then(m => m.ContactComponent) }, 
+  { path: 'inspection/:id', loadComponent: () => import('./app/inspection/inspection.component').then(c => c.InspectionComponent) }
 ];

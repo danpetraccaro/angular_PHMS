@@ -12,7 +12,7 @@ import { TPremises } from '../types/premises';
 
 
 @Component({
-  selector: 'app-food-audit',
+  selector: 'app-food-audit-home',
   standalone: true,
   imports: [
     CommonModule,

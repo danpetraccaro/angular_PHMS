@@ -1,0 +1,44 @@
+<!-- Main Form -->
+<div class="details-section">
+
+  <table mat-table [dataSource]="inspections" class="mat-elevation-z8">
+        
+    <!-- Premises -->
+    <ng-container matColumnDef="id">
+      <th mat-header-cell *matHeaderCellDef>Inspection</th>
+      <td mat-cell *matCellDef="let p">
+        <a [routerLink]="['/inspection/', p.id]" class="mode-responsive-link">
+          {{ p.id }}
+        </a>
+      </td>
+    </ng-container>
+
+    <ng-container matColumnDef="auditor">
+      <th mat-header-cell *matHeaderCellDef>Auditor</th>
+      <td mat-cell *matCellDef="let p">
+        {{ p.auditor }}
+      </td>
+    </ng-container>
+
+    <!-- Premise Types-->
+    <ng-container matColumnDef="auditDate">
+      <th mat-header-cell *matHeaderCellDef>Audit Date</th>
+      <td mat-cell *matCellDef="let p">
+        {{ p.auditDate | date: 'dd/MM/yyyy' }}
+      </td>
+    </ng-container>
+
+       <!-- Premise Types-->
+       <ng-container matColumnDef="nextAuditDate">
+        <th mat-header-cell *matHeaderCellDef>Next Audit Date</th>
+        <td mat-cell *matCellDef="let p">
+          {{ p.nextAuditDate | date: 'dd/MM/yyyy' }}
+        </td>
+      </ng-container>
+    
+    <!-- Header and Row Definitions -->
+    <tr mat-header-row *matHeaderRowDef="columns" class="primary-theme-colour"></tr>
+    <tr mat-row *matRowDef="let rec; columns: columns" class="my-table-row"></tr>
+
+  </table>
+</div>
