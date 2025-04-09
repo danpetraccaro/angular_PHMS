@@ -48,15 +48,15 @@ export class FoodAuditComponent {
 
   onTabChange(event: MatTabChangeEvent): void {
     // Index 4 is the "Inspections" tab
-    if (event.index === 4) {
+    if (event.index === 5) {
       this.router.navigate(['/inspection']);
     }
 
-    if (event.index === 5) {
+    if (event.index === 6) {
       this.router.navigate(['/inspectionschedule']);
     }
 
-    if (event.index === 6) {
+    if (event.index === 2) {
       this.router.navigate(['/contact']);
     }
 

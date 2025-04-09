@@ -12,9 +12,7 @@
 </div>
 
 <!-- Tabs -->
-<mat-tab-group>
-
-  
+<mat-tab-group (selectedTabChange)="onTabChange($event)">
   <mat-tab label="Details"><p></p></mat-tab>
   <mat-tab label="Comments"><p></p></mat-tab>
   <mat-tab label="Contacts"><p></p></mat-tab>
