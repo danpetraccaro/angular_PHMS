@@ -1,39 +1,41 @@
 <div class="container">
-    <h1>PHISE</h1>
-    
-    <div class="flex-container">
-      <div>
-        <a [routerLink]="['/surveillance']" class="card-link">
-          <mat-card>
-            <mat-card-header>
-              <div>
-                <span class="material-symbols-outlined page-link-icon" style="color: #006cff">
-                  Quick_Reference_All
-                </span>
-              </div>
-            </mat-card-header>
-            <mat-card-content>
-              Food Standard<br />
-              Surveillance
-            </mat-card-content>
-          </mat-card>
-        </a>
-      </div>
+  <h1>PHISE</h1>
 
-      <div>
-        <a [routerLink]="['/audit']" class="card-link">
-            <mat-card-header>
-              <div>
-                <span class="material-symbols-outlined page-link-icon" style="color: #006cff">
-                   Fact_Check
-                </span>
-              </div>
-            </mat-card-header>
-            <mat-card-content>
-              Food Safety<br />
-              & Audit
-            </mat-card-content>
-          </mat-card>
-        </a>
-      </div>
+  <div class="flex-container">
+    <div>
+      <a [routerLink]="['/surveillance']" class="card-link">
+        <mat-card>
+          <mat-card-header>
+            <div>
+              <span class="material-symbols-outlined page-link-icon" style="color: #006cff">
+                Quick_Reference_All
+              </span>
+            </div>
+          </mat-card-header>
+          <mat-card-content>
+            Food Standard<br />
+            Surveillance
+          </mat-card-content>
+        </mat-card>
+      </a>
     </div>
+
+    <div>
+      <a [routerLink]="['/audit']" class="card-link">
+        <mat-card> <!-- ✅ Added missing opening tag -->
+          <mat-card-header>
+            <div>
+              <span class="material-symbols-outlined page-link-icon" style="color: #006cff">
+                Fact_Check
+              </span>
+            </div>
+          </mat-card-header>
+          <mat-card-content>
+            Food Safety<br />
+            & Audit
+          </mat-card-content>
+        </mat-card> <!-- ✅ Now correctly paired -->
+      </a>
+    </div>
+  </div>
+</div>

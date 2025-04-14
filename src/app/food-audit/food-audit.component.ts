@@ -50,21 +50,25 @@ import { ToolbarComponent } from '../toolbar/toolbar.component';
   ]
 })
 export class FoodAuditComponent {
+  // ✅ Added title and icon fields for use in the template
+  title = 'Kangaroo Island Eggs';
+  icon = 'store';
+
   private route = inject(ActivatedRoute);
 
   constructor() {
     const id = this.route.snapshot.paramMap.get('id');
+    console.log('Loaded Food Audit with ID:', id);
   }
 
   openMyDetails() {
     const dialogConfig = new MatDialogConfig();
-    // dialogConfig.disableClose = true;
     dialogConfig.autoFocus = true;
     dialogConfig.minWidth = 600;
     dialogConfig.maxWidth = 800;
 
     console.log('Opening My Details with config:', dialogConfig);
-    // You'd open the dialog here with MatDialog if needed
+    // MatDialog logic would go here
   }
 
   openChangePassword() {
@@ -75,14 +79,16 @@ export class FoodAuditComponent {
     dialogConfig.maxWidth = 400;
 
     console.log('Opening Change Password with config:', dialogConfig);
-    // You'd open the dialog here with MatDialog if needed
+    // MatDialog logic would go here
   }
 
   openPowerBI() {
     console.log('Opening PowerBI Reports...');
+    // Add actual logic if needed
   }
 
   logout() {
     console.log('Logging out...');
+    // Add actual logic if needed
   }
 }
