@@ -4,23 +4,17 @@
 
 <mat-toolbar class="toolbar" color="primary">
   <div class="app-title">
-    <!-- ✅ Use Material Symbols for correct icon rendering -->
-    <span class="material-symbols-outlined app-icon">{{ icon }}</span>
-    <span class="ml-10">{{ title }}</span>
+
   </div>
 
-  <div class="d-flex align-items-center">about:blank#blocked
-    <div class="mr-10"></div>
+  <div class="d-flex align-items-center"> <div class="mr-10"></div>
 
     <div [matMenuTriggerFor]="belowMenu" class="menu">
-      <span class="material-symbols-outlined nav-icon">psychology</span>
+      <span class="material-symbols-outlined nav-icon">more_vert</span>
     </div>
 
     <mat-menu #belowMenu="matMenu" yPosition="below">
-      <button mat-menu-item (click)="openMyDetails()">My Details</button>
-      <button mat-menu-item (click)="openChangePassword()">Change Password</button>
-      <button mat-menu-item (click)="openChangePassword()">PowerBI Reports</button>
-      <button mat-menu-item (click)="openChangePassword()">Logout</button>
+      <button mat-menu-item (click)="openMyDetails()">New Inspection</button>
     </mat-menu>
   </div>
 </mat-toolbar>
