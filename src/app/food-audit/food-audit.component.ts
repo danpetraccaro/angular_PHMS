@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component, inject } from '@angular/core';
-import { ActivatedRoute, RouterLink, RouterModule } from '@angular/router';
+import { ActivatedRoute, Router, RouterLink, RouterModule } from '@angular/router';
 
 import { MatCardModule } from '@angular/material/card';
 import { MatExpansionModule } from '@angular/material/expansion';
@@ -50,15 +50,22 @@ import { ToolbarComponent } from '../toolbar/toolbar.component';
   ]
 })
 export class FoodAuditComponent {
-  // ✅ Added title and icon fields for use in the template
+  // Title and icon for toolbar
   title = 'Kangaroo Island Eggs';
   icon = 'store';
 
+  // Inject services
   private route = inject(ActivatedRoute);
+  private router = inject(Router);
 
   constructor() {
     const id = this.route.snapshot.paramMap.get('id');
     console.log('Loaded Food Audit with ID:', id);
+  }
+
+  openNewInspection() {
+    console.log('Navigating to New Inspection...');
+    this.router.navigate(['/new-inspection']);
   }
 
   openMyDetails() {

@@ -8,5 +8,6 @@ export const routes: Routes = [
   { path: 'audit', loadComponent: () => import('./app/food-audit-home/food-audit-home.component').then(c => c.FoodAuditHomeComponent) },
   { path: 'premise', loadComponent: () => import('./app/food-audit/food-audit.component').then(c => c.FoodAuditComponent) },
   { path: 'contact', loadComponent: () => import('./app/contact/contact.component').then(m => m.ContactComponent) }, 
-  { path: 'inspection/:id', loadComponent: () => import('./app/inspection/inspection.component').then(c => c.InspectionComponent) }
+  { path: 'inspection/:id', loadComponent: () => import('./app/inspection/inspection.component').then(c => c.InspectionComponent) },
+  { path: 'new-inspection', loadComponent: () => import('./app/new-inspection/new-inspection.component').then(c => c.NewInspectionComponent) }
 ];
