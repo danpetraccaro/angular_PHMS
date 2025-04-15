@@ -14,11 +14,12 @@ import { MatTabsModule } from '@angular/material/tabs';
 import { MatSelectModule } from '@angular/material/select';
 import { MatOptionModule } from '@angular/material/core';
 import { MatMenuModule } from '@angular/material/menu';
-import { MatDialogModule, MatDialogConfig } from '@angular/material/dialog';
+import { MatDialogModule, MatDialogConfig, MatDialog } from '@angular/material/dialog';
 import { MatToolbarModule } from '@angular/material/toolbar';
 
 import { InspectionComponent } from '../inspection-list/inspection-list.component';
 import { ToolbarComponent } from '../toolbar/toolbar.component';
+import { NewInspectionComponent } from '../new-inspection/new-inspection.component';
 
 @Component({
   selector: 'app-food-audit',
@@ -46,26 +47,37 @@ import { ToolbarComponent } from '../toolbar/toolbar.component';
     MatOptionModule,
     MatMenuModule,
     MatDialogModule,
-    MatToolbarModule
+    MatToolbarModule,
+
+    // Dialog Component
+    NewInspectionComponent 
   ]
 })
 export class FoodAuditComponent {
-  // Title and icon for toolbar
+  // Toolbar title and icon
   title = 'Kangaroo Island Eggs';
   icon = 'store';
 
   // Inject services
   private route = inject(ActivatedRoute);
   private router = inject(Router);
+  private dialog = inject(MatDialog); // ✅ now correctly inside the class
 
   constructor() {
     const id = this.route.snapshot.paramMap.get('id');
     console.log('Loaded Food Audit with ID:', id);
   }
 
-  openNewInspection() {
-    console.log('Navigating to New Inspection...');
-    this.router.navigate(['/new-inspection']);
+  // Open New Inspection dialog
+  openNewInspection(): void {
+    const dialogRef = this.dialog.open(NewInspectionComponent, {
+      width: '500px',
+      disableClose: true
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log('New inspection dialog closed');
+    });
   }
 
   openMyDetails() {
@@ -75,7 +87,6 @@ export class FoodAuditComponent {
     dialogConfig.maxWidth = 800;
 
     console.log('Opening My Details with config:', dialogConfig);
-    // MatDialog logic would go here
   }
 
   openChangePassword() {
@@ -86,16 +97,13 @@ export class FoodAuditComponent {
     dialogConfig.maxWidth = 400;
 
     console.log('Opening Change Password with config:', dialogConfig);
-    // MatDialog logic would go here
   }
 
   openPowerBI() {
     console.log('Opening PowerBI Reports...');
-    // Add actual logic if needed
   }
 
   logout() {
     console.log('Logging out...');
-    // Add actual logic if needed
   }
 }
