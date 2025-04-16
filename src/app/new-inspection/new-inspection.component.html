@@ -4,7 +4,7 @@
 <mat-dialog-content>
   <form [formGroup]="editForm" class="form-container">
 
-    <mat-form-field class="full-width">
+    <mat-form-field>
       <mat-label>Next Inspection</mat-label>
       <mat-select formControlName="nextInspection">
         <mat-option value="Initial Audit">Initial Audit</mat-option>
@@ -21,6 +21,17 @@
         <mat-datepicker-toggle matSuffix [for]="incidentDatePicker"></mat-datepicker-toggle>
         <mat-datepicker #incidentDatePicker></mat-datepicker>
       </mat-form-field>
+
+      <mat-form-field>
+      <mat-label>Auditor</mat-label>
+        <select matNativeControl required>
+        <option value="volvo">Scooby Doo</option>
+        <option value="saab">Donald DUck</option>
+        <option value="mercedes">Cat Woman</option>
+        <option value="audi">Blanket Jackson</option>
+        </select>
+      </mat-form-field>
+
 
   </form>
 </mat-dialog-content>
