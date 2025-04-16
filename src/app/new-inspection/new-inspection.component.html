@@ -7,22 +7,17 @@
     <mat-form-field class="full-width">
       <mat-label>Next Inspection</mat-label>
       <mat-select formControlName="nextInspection">
-        <mat-option value="weekly">Weekly</mat-option>
-        <mat-option value="monthly">Monthly</mat-option>
-        <mat-option value="yearly">Yearly</mat-option>
+        <mat-option value="Initial Audit">Initial Audit</mat-option>
+        <mat-option value="Scheduled Audit (3 months)">Scheduled Audit (3 months)</mat-option>
+        <mat-option value="Scheduled Audit (6 months)">Scheduled Audit (6 months)</mat-option>
+        <mat-option value="Scheduled Audit (12 months)">Scheduled Audit (12 months)</mat-option>
+        <mat-option value="Follow Up Audit">Follow Up Audit</mat-option>
       </mat-select>
     </mat-form-field>
 
-    <mat-form-field  class="full-width">
-        <mat-label>Incident Date</mat-label>
-        <input matInput [matDatepicker]="incidentDate" formControlName="incidentDate" />
-        <mat-datepicker-toggle matIconSuffix [for]="incidentDate"></mat-datepicker-toggle>
-        <mat-datepicker #incidentDate></mat-datepicker>
-      </mat-form-field>
-
       <mat-form-field class="full-width">
         <mat-label>Next Audit Date</mat-label>
-        <input matInput [matDatepicker]="incidentDatePicker" formControlName="incidentDate" />
+        <input matInput [matDatepicker]="incidentDatePicker" formControlName="nextAuditDate" />
         <mat-datepicker-toggle matSuffix [for]="incidentDatePicker"></mat-datepicker-toggle>
         <mat-datepicker #incidentDatePicker></mat-datepicker>
       </mat-form-field>

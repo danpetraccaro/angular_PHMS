@@ -38,27 +38,39 @@ import { MatDividerModule } from '@angular/material/divider';
 })
 export class NewInspectionComponent {
   editForm: FormGroup;
-  healthUnit = 'CHPL'; // or WWM
-  categoryOpts = [
-    { value: 'hygiene', viewValue: 'Hygiene' },
-    { value: 'safety', viewValue: 'Safety' }
-  ];
-  subCategoryOpts = [
-    { value: 'pest', viewValue: 'Pest Control' },
-    { value: 'clean', viewValue: 'Cleanliness' }
-  ];
 
   constructor(
     private dialogRef: MatDialogRef<NewInspectionComponent>,
     private fb: FormBuilder
   ) {
     this.editForm = this.fb.group({
-      nextInspection: ['weekly', Validators.required],
-      category: ['', Validators.required],
-      subCategory: [''],
-      incidentDate: [new Date(), Validators.required], // ✅ Default to today
-      subject: ['', Validators.required],
-      details: ['']
+      nextInspection: ['', Validators.required],
+      incidentDate: [new Date(), Validators.required],
+      nextAuditDate: [null, Validators.required]  // ✅ changed from incidentDatePicker
+    });
+
+    this.editForm.get('nextInspection')?.valueChanges.subscribe(value => {
+      const today = new Date();
+      let offsetDays = 0;
+
+      switch (value) {
+        case 'Scheduled Audit (3 months)':
+          offsetDays = 90;
+          break;
+        case 'Scheduled Audit (6 months)':
+          offsetDays = 180;
+          break;
+        case 'Scheduled Audit (12 months)':
+          offsetDays = 365;
+          break;
+        default:
+          offsetDays = 0;
+      }
+
+      const nextAuditDate = new Date(today);
+      nextAuditDate.setDate(today.getDate() + offsetDays);
+
+      this.editForm.get('nextAuditDate')?.setValue(offsetDays ? nextAuditDate : null);
     });
   }
 
