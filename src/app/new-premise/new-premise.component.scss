@@ -4,7 +4,7 @@
     gap: 1.5rem;
     padding: 1.5rem;
     width: 100%;
-    max-width: 500px;
+    max-width: 1800px;
     box-sizing: border-box;
   }
   
@@ -46,4 +46,26 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 20px;
+  }
+
+  .icon-group {
+    display: flex;
+    gap: 6px;
+    align-items: center;
+  }
+  
+  .search-icon {
+    background-color: #607d8b;
+    color: white;
+    padding: 4px;
+    border-radius: 4px;
+    font-size: 20px;
+  }
+  
+  .clear-icon {
+    background-color: #fdd835;
+    color: black;
+    padding: 4px;
+    border-radius: 4px;
+    font-size: 20px;
   }

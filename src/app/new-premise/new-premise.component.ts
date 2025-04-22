@@ -14,6 +14,7 @@ import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
 import { MatButtonModule } from '@angular/material/button';
 import { MatDividerModule } from '@angular/material/divider';
+import { MatIconModule } from '@angular/material/icon';
 
 @Component({
   selector: 'app-new-premise',
@@ -33,7 +34,8 @@ import { MatDividerModule } from '@angular/material/divider';
     MatDatepickerModule,
     MatNativeDateModule,
     MatButtonModule,
-    MatDividerModule
+    MatDividerModule,
+    MatIconModule
   ]
 })
 export class NewPremiseComponent {
@@ -46,7 +48,13 @@ export class NewPremiseComponent {
     this.editForm = this.fb.group({
       nextInspection: ['', Validators.required],
       incidentDate: [new Date(), Validators.required],
-      nextAuditDate: [null, Validators.required]  // ✅ changed from incidentDatePicker
+      nextAuditDate: [null, Validators.required],
+      premiseType: ['', Validators.required],
+      description: [''],
+      tradingName: [''],
+      assessingOfficer: [''],
+      applicant: ['']
+      
     });
 
     this.editForm.get('nextInspection')?.valueChanges.subscribe(value => {
@@ -84,4 +92,15 @@ export class NewPremiseComponent {
   onCancel(): void {
     this.dialogRef.close();
   }
+
+  onSearchApplicant(): void {
+    const applicant = this.editForm.get('applicant')?.value;
+    console.log('Search applicant:', applicant);
+    // Your search logic goes here
+  }
+  
+  clearApplicant(): void {
+    this.editForm.get('applicant')?.setValue('');
+  }
+
 }

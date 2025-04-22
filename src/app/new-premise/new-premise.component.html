@@ -1,42 +1,59 @@
-<h2 mat-dialog-title>New Premise</h2>
-<mat-divider></mat-divider>
+<h2 mat-dialog-title>
+    <mat-icon color="primary" style="vertical-align: middle;"></mat-icon>
+    <span class="ml-8">Create New Premise</span>
+  </h2>
+  <mat-divider></mat-divider>
+  
+  <mat-dialog-content>
+    <form [formGroup]="editForm" class="form-container">
+  
+      <!-- Organisation + Premise Type -->
+      <div class="css-grid-80-80">
+        <mat-form-field class="full-width" appearance="fill">
+          <mat-label>Organisation</mat-label>
+          <input matInput value="Kangaroo Island Eggs" readonly />
+        </mat-form-field>
+  
+        <mat-form-field class="full-width" appearance="fill">
+          <mat-label>Premise Type</mat-label>
+          <mat-select formControlName="premiseType">
+            <mat-option value="Retail">Seafood Bivalve Mollusc</mat-option>
+            <mat-option value="Warehouse">RTE Meat</mat-option>
+            <mat-option value="Factory">Aged Care</mat-option>
+            <mat-option value="Factory">Meals On Wheels</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+  
+      <!-- Description + Trading Name -->
+      <div class="css-grid-50-50">
+        <mat-form-field class="full-width" appearance="fill">
+          <mat-label>Description</mat-label>
+          <input matInput formControlName="description" />
+        </mat-form-field>
+  
+        <mat-form-field class="full-width" appearance="fill">
+          <mat-label>Trading Name</mat-label>
+          <input matInput formControlName="tradingName" />
+        </mat-form-field>
+      </div>
 
-<mat-dialog-content>
-  <form [formGroup]="editForm" class="form-container">
-
-    <mat-form-field>
-      <mat-label>Next Inspection</mat-label>
-      <mat-select formControlName="nextInspection">
-        <mat-option value="Initial Audit">Initial Audit</mat-option>
-        <mat-option value="Scheduled Audit (3 months)">Scheduled Audit (3 months)</mat-option>
-        <mat-option value="Scheduled Audit (6 months)">Scheduled Audit (6 months)</mat-option>
-        <mat-option value="Scheduled Audit (12 months)">Scheduled Audit (12 months)</mat-option>
-        <mat-option value="Follow Up Audit">Follow Up Audit</mat-option>
-      </mat-select>
-    </mat-form-field>
-
-      <mat-form-field class="full-width">
-        <mat-label>Next Audit Date</mat-label>
-        <input matInput [matDatepicker]="incidentDatePicker" formControlName="nextAuditDate" />
-        <mat-datepicker-toggle matSuffix [for]="incidentDatePicker"></mat-datepicker-toggle>
-        <mat-datepicker #incidentDatePicker></mat-datepicker>
+  
+      <!-- Assessing Officer -->
+      <mat-form-field class="full-width" appearance="fill">
+        <mat-label>Assessing Officer</mat-label>
+        <mat-select formControlName="assessingOfficer">
+          <mat-option value="john">John Smith</mat-option>
+          <mat-option value="jane">Jane Doe</mat-option>
+          <mat-option value="alex">Alex Turner</mat-option>
+        </mat-select>
       </mat-form-field>
+  
 
-      <mat-form-field>
-      <mat-label>Auditor</mat-label>
-        <select matNativeControl required>
-        <option value="volvo">Scooby Doo</option>
-        <option value="saab">Donald DUck</option>
-        <option value="mercedes">Cat Woman</option>
-        <option value="audi">Blanket Jackson</option>
-        </select>
-      </mat-form-field>
-
-
-  </form>
-</mat-dialog-content>
-
-<mat-dialog-actions align="end">
-  <button mat-raised-button color="primary" [disabled]="editForm.invalid" (click)="onSubmit()">Submit</button>
-  <button mat-stroked-button color="warn" (click)="onCancel()">Cancel</button>
-</mat-dialog-actions>
+    </form>
+  </mat-dialog-content>
+  
+  <mat-dialog-actions align="end">
+    <button mat-raised-button color="primary" [disabled]="editForm.invalid" (click)="onSubmit()">Submit</button>
+    <button mat-stroked-button color="warn" (click)="onCancel()">Cancel</button>
+  </mat-dialog-actions>

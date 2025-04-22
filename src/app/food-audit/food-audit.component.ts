@@ -84,7 +84,7 @@ export class FoodAuditComponent {
     // Open New Premise dialog
     openNewPremise(): void {
       const dialogRef = this.dialog.open(NewPremiseComponent, {
-        width: '500px',
+        width: '3000px',
         disableClose: true
       });
   
