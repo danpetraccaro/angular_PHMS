@@ -1,0 +1,49 @@
+.form-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    padding: 1.5rem;
+    width: 100%;
+    max-width: 500px;
+    box-sizing: border-box;
+  }
+  
+  .full-width {
+    width: 100%;
+  
+    ::ng-deep .mat-form-field-flex,
+    ::ng-deep input.mat-input-element,
+    ::ng-deep .mat-select,
+    ::ng-deep .mat-select-trigger,
+    ::ng-deep .mat-select-value {
+      background-color: #e0e0e0 !important;
+      border-radius: 6px;
+    }
+  
+    ::ng-deep input.mat-input-element,
+    ::ng-deep .mat-select-trigger {
+      padding: 0.5rem 1rem;
+    }
+  }
+  
+  /* Dropdown menu and options */
+  :host ::ng-deep .mat-select-panel {
+    background-color: #e0e0e0 !important;
+    border-radius: 6px !important;
+    box-shadow: none !important;
+  }
+  
+  :host ::ng-deep .mat-select-option {
+    background-color: #e0e0e0 !important;
+    border-radius: 6px;
+  }
+  
+  :host ::ng-deep .mat-select-option:hover {
+    background-color: #bdbdbd !important;
+  }
+  
+  .css-grid-50-50 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+  }

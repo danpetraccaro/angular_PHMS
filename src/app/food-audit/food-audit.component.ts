@@ -20,6 +20,7 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { InspectionComponent } from '../inspection-list/inspection-list.component';
 import { ToolbarComponent } from '../toolbar/toolbar.component';
 import { NewInspectionComponent } from '../new-inspection/new-inspection.component';
+import { NewPremiseComponent } from '../new-premise/new-premise.component';
 
 @Component({
   selector: 'app-food-audit',
@@ -79,6 +80,20 @@ export class FoodAuditComponent {
       console.log('New inspection dialog closed');
     });
   }
+
+    // Open New Premise dialog
+    openNewPremise(): void {
+      const dialogRef = this.dialog.open(NewPremiseComponent, {
+        width: '500px',
+        disableClose: true
+      });
+  
+      dialogRef.afterClosed().subscribe(result => {
+        console.log('New Premise dialog closed');
+      });
+    }
+
+    
 
   openMyDetails() {
     const dialogConfig = new MatDialogConfig();

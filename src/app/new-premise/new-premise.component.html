@@ -1,0 +1,42 @@
+<h2 mat-dialog-title>New Premise</h2>
+<mat-divider></mat-divider>
+
+<mat-dialog-content>
+  <form [formGroup]="editForm" class="form-container">
+
+    <mat-form-field>
+      <mat-label>Next Inspection</mat-label>
+      <mat-select formControlName="nextInspection">
+        <mat-option value="Initial Audit">Initial Audit</mat-option>
+        <mat-option value="Scheduled Audit (3 months)">Scheduled Audit (3 months)</mat-option>
+        <mat-option value="Scheduled Audit (6 months)">Scheduled Audit (6 months)</mat-option>
+        <mat-option value="Scheduled Audit (12 months)">Scheduled Audit (12 months)</mat-option>
+        <mat-option value="Follow Up Audit">Follow Up Audit</mat-option>
+      </mat-select>
+    </mat-form-field>
+
+      <mat-form-field class="full-width">
+        <mat-label>Next Audit Date</mat-label>
+        <input matInput [matDatepicker]="incidentDatePicker" formControlName="nextAuditDate" />
+        <mat-datepicker-toggle matSuffix [for]="incidentDatePicker"></mat-datepicker-toggle>
+        <mat-datepicker #incidentDatePicker></mat-datepicker>
+      </mat-form-field>
+
+      <mat-form-field>
+      <mat-label>Auditor</mat-label>
+        <select matNativeControl required>
+        <option value="volvo">Scooby Doo</option>
+        <option value="saab">Donald DUck</option>
+        <option value="mercedes">Cat Woman</option>
+        <option value="audi">Blanket Jackson</option>
+        </select>
+      </mat-form-field>
+
+
+  </form>
+</mat-dialog-content>
+
+<mat-dialog-actions align="end">
+  <button mat-raised-button color="primary" [disabled]="editForm.invalid" (click)="onSubmit()">Submit</button>
+  <button mat-stroked-button color="warn" (click)="onCancel()">Cancel</button>
+</mat-dialog-actions>
