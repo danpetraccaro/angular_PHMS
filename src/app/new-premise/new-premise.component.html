@@ -8,7 +8,7 @@
     <form [formGroup]="editForm" class="form-container">
   
       <!-- Organisation + Premise Type -->
-      <div class="css-grid-80-80">
+      <div class="css-grid-50-50">
         <mat-form-field class="full-width" appearance="fill">
           <mat-label>Organisation</mat-label>
           <input matInput value="Kangaroo Island Eggs" readonly />
@@ -28,32 +28,29 @@
       <!-- Description + Trading Name -->
       <div class="css-grid-50-50">
         <mat-form-field class="full-width" appearance="fill">
-          <mat-label>Description</mat-label>
-          <input matInput formControlName="description" />
-        </mat-form-field>
-  
-        <mat-form-field class="full-width" appearance="fill">
           <mat-label>Trading Name</mat-label>
           <input matInput formControlName="tradingName" />
         </mat-form-field>
-      </div>
 
-  
-      <!-- Assessing Officer -->
-      <mat-form-field class="full-width" appearance="fill">
-        <mat-label>Assessing Officer</mat-label>
-        <mat-select formControlName="assessingOfficer">
-          <mat-option value="john">John Smith</mat-option>
-          <mat-option value="jane">Jane Doe</mat-option>
-          <mat-option value="alex">Alex Turner</mat-option>
-        </mat-select>
-      </mat-form-field>
+        <!--
+
+        <mat-form-field class="full-width" appearance="fill">
+          <mat-label>Assessing Officer</mat-label>
+          <mat-select formControlName="assessingOfficer*">
+            <mat-option value="john">John Smith</mat-option>
+            <mat-option value="jane">Jane Doe</mat-option>
+            <mat-option value="alex">Alex Turner</mat-option>
+          </mat-select>
+        </mat-form-field>
+-->
+
+      </div>
   
 
     </form>
   </mat-dialog-content>
   
   <mat-dialog-actions align="end">
-    <button mat-raised-button color="primary" [disabled]="editForm.invalid" (click)="onSubmit()">Submit</button>
+    <button mat-raised-button color="primary" [disabled]="editForm.invalid" (click)="onSubmit()">Save</button>
     <button mat-stroked-button color="warn" (click)="onCancel()">Cancel</button>
   </mat-dialog-actions>

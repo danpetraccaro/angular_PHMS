@@ -69,3 +69,40 @@
     border-radius: 4px;
     font-size: 20px;
   }
+
+
+  .address-container {
+    display: inline-block;
+    margin: 1rem;
+  }
+  
+  .address-label {
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+  }
+  
+  .address-box {
+    border: 1px solid #ccc;
+    padding: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    min-width: 200px;
+    position: relative;
+    background: white;
+  }
+  
+  .icon-actions {
+    margin-top: 1rem;
+    text-align: right;
+  }
+  
+  .material-symbols-outlined {
+    font-size: 20px;
+    cursor: pointer;
+    margin-left: 8px;
+    vertical-align: middle;
+  }
+  
+  .delete-icon {
+    color: red;
+  }

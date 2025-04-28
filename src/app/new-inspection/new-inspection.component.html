@@ -22,16 +22,15 @@
         <mat-datepicker #incidentDatePicker></mat-datepicker>
       </mat-form-field>
 
-      <mat-form-field>
-      <mat-label>Auditor</mat-label>
-        <select matNativeControl required>
-        <option value="volvo">Scooby Doo</option>
-        <option value="saab">Donald DUck</option>
-        <option value="mercedes">Cat Woman</option>
-        <option value="audi">Blanket Jackson</option>
-        </select>
+      
+      <mat-form-field class="full-width" appearance="fill">
+        <mat-label>Assessing Officer</mat-label>
+        <mat-select formControlName="assessingOfficer*">
+          <mat-option value="john">John Smith</mat-option>
+          <mat-option value="jane">Jane Doe</mat-option>
+          <mat-option value="alex">Alex Turner</mat-option>
+        </mat-select>
       </mat-form-field>
-
 
   </form>
 </mat-dialog-content>

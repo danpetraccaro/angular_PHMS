@@ -39,7 +39,7 @@ import { ToolbarComponent } from '../toolbar/toolbar.component';
 export class InspectionComponent {
 
 
-  public columns: string[] = ['id', 'auditor', 'auditDate', 'nextAuditDate'];
+  public columns: string[] = ['id', 'auditor', 'council', 'auditDate', 'nextAuditDate'];
 
   public inspections: TInspections[] = [
     {
@@ -54,6 +54,8 @@ export class InspectionComponent {
       nextAuditDate: new Date(),
       id: 2
     }
+
+    
   ];
 }
 

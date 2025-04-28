@@ -56,7 +56,7 @@
       <div class="row">
         <mat-form-field appearance="fill" class="field">
           <mat-label>Council</mat-label>
-          <input matInput value="1124345" disabled>
+          <input matInput value="Kangaroo Island District" disabled>
         </mat-form-field>
         <mat-form-field appearance="fill" class="field">
           <mat-label>BPAY Reference</mat-label>
@@ -80,15 +80,7 @@
           <mat-panel-title>Additional Fields</mat-panel-title>
         </mat-expansion-panel-header>
 
-        <mat-form-field appearance="fill" class="field">
-          <mat-label>Auditor</mat-label>
-          <input matInput value="Tina Marie Agahiana" disabled>
-        </mat-form-field>
-
-        <mat-form-field appearance="fill" class="field">
-          <mat-label>Council</mat-label>
-          <input matInput value="Port Lincoln District" disabled>
-        </mat-form-field>
+     
       </mat-expansion-panel>
 
       <mat-expansion-panel>
@@ -104,7 +96,28 @@
         <mat-expansion-panel-header>
           <mat-panel-title>Addresses</mat-panel-title>
         </mat-expansion-panel-header>
-        <p>Address content goes here...</p>
+        
+        <mat-form-field appearance="fill" class="field">
+          <mat-label>Premise Address</mat-label>
+          <textarea matInput readonly rows="6" style="resize: none;">
+        85 Edmund Avenue
+        UNLEY
+        SA
+        Australia
+        5061
+          </textarea>
+        </mat-form-field>
+        
+        <mat-form-field appearance="fill" class="field">
+          <mat-label>Postal Address</mat-label>
+          <textarea matInput readonly rows="6" style="resize: none;">
+        85 Edmund Avenue
+        UNLEY
+        SA
+        Australia
+        5061
+          </textarea>
+        </mat-form-field>
       </mat-expansion-panel>
     </mat-accordion>
   </mat-tab>
