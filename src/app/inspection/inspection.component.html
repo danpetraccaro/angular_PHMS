@@ -1,79 +1,111 @@
-<h1>Inspection. Inspection Id: {{inspectionId}}</h1>
+<h1>Inspection · ID {{ inspectionId }}</h1>
 
-
+<!-- ──────────── TABS ──────────── -->
 <mat-tab-group>
 
+  <!-- ───── Details tab (your existing form layout, unchanged) ───── -->
   <mat-tab label="Details">
-    <div class="button-group">
-    </div>
     <div class="details-section">
-      <!-- First row with 4 fields -->
+
+      <!-- Row 1 -->
       <div class="row">
         <mat-form-field appearance="fill" class="field">
           <mat-label>Trading Name</mat-label>
-          <input matInput value="Kangaroo Island Eggs" disabled>
+          <input matInput value="Kangaroo Island Eggs" disabled />
         </mat-form-field>
+
         <mat-form-field appearance="fill" class="field">
           <mat-label>Address</mat-label>
-          <input matInput value="23 Egg Street, Kingston. SA. 5009" disabled>
+          <input matInput value="23 Egg Street, Kingston SA 5009" disabled />
         </mat-form-field>
+
         <mat-form-field appearance="fill" class="field">
           <mat-label>Type</mat-label>
-          <input matInput value="Public Hospital Medium" disabled>
+          <input matInput value="Public Hospital – Medium" disabled />
         </mat-form-field>
       </div>
 
-
-      <!-- First row with 4 fields -->
-
+      <!-- Row 2 -->
       <div class="row">
         <mat-form-field appearance="fill" class="field">
           <mat-label>Inspection Type</mat-label>
-          <input matInput value="SA Health Food Audit CheckList" disabled>
+          <input matInput value="SA Health Food Audit Checklist" disabled />
         </mat-form-field>
+
         <mat-form-field appearance="fill" class="field">
           <mat-label>Inspection Date</mat-label>
-          <input matInput value="17/04/2025" disabled>
+          <input matInput value="17/04/2025" disabled />
         </mat-form-field>
+
         <mat-form-field appearance="fill" class="field">
-          <mat-label>Time Compleated</mat-label>
-          <input matInput value="12:30" disabled>
+          <mat-label>Time Completed</mat-label>
+          <input matInput value="12:30" disabled />
         </mat-form-field>
       </div>
 
-    <div class="row">
-      <mat-form-field appearance="fill" class="field">
-        <mat-label>Reason</mat-label>
-        <input matInput value="--Pick Reason--" disabled>
-      </mat-form-field>
-      <mat-form-field appearance="fill" class="field">
-        <mat-label>Compliance</mat-label>
-        <input matInput value="Complied" disabled>
-      </mat-form-field>
+      <!-- Row 3 -->
+      <div class="row">
+        <mat-form-field appearance="fill" class="field">
+          <mat-label>Reason</mat-label>
+          <input matInput value="— Pick Reason —" disabled />
+        </mat-form-field>
+
+        <mat-form-field appearance="fill" class="field">
+          <mat-label>Compliance</mat-label>
+          <input matInput value="Complied" disabled />
+        </mat-form-field>
+      </div>
+
+      <!-- Row 4 -->
+      <div class="row">
+        <mat-form-field appearance="fill" class="field">
+          <mat-label>Auditor</mat-label>
+          <input matInput value="Blofeld Spectre" disabled />
+        </mat-form-field>
+
+        <mat-form-field appearance="fill" class="field">
+          <mat-label>Secondary Officer</mat-label>
+          <input matInput value="James Bond" disabled />
+        </mat-form-field>
+      </div>
+
     </div>
-
-  <div class="row">
-    <mat-form-field appearance="fill" class="field">
-      <mat-label>Auditor</mat-label>
-      <input matInput value="Blofeld Spectre" disabled>
-    </mat-form-field>
-    <mat-form-field appearance="fill" class="field">
-      <mat-label>Secondary Officer</mat-label>
-      <input matInput value="James Bond" disabled>
-    </mat-form-field>
-  </div>
-
-
-
-</div>
-
-
   </mat-tab>
+
+  <!-- ───── Summary tab with the MatTable (includes “council” column) ───── -->
+  <mat-tab label="Summary">
+    <table mat-table [dataSource]="dataSource" class="mat-elevation-z8 full-width">
+
+      <!-- Council column -->
+      <ng-container matColumnDef="council">
+        <th mat-header-cell *matHeaderCellDef> Council </th>
+        <td mat-cell        *matCellDef="let row"> {{ row.council }} </td>
+      </ng-container>
+
+      <!-- Trading Name column -->
+      <ng-container matColumnDef="tradingName">
+        <th mat-header-cell *matHeaderCellDef> Trading&nbsp;Name </th>
+        <td mat-cell        *matCellDef="let row"> {{ row.tradingName }} </td>
+      </ng-container>
+
+      <!-- Address column -->
+      <ng-container matColumnDef="address">
+        <th mat-header-cell *matHeaderCellDef> Address </th>
+        <td mat-cell        *matCellDef="let row"> {{ row.address }} </td>
+      </ng-container>
+
+      <!-- Render rows -->
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row        *matRowDef="let row; columns: displayedColumns"></tr>
+    </table>
+  </mat-tab>
+
 </mat-tab-group>
 
+<!-- Back link -->
 <div class="back-home-container">
-    <a [routerLink]="['/']" class="back-link">
-      <span class="material-symbols-outlined">arrow_back</span>
-      Back to Home
-    </a>
-  </div>
+  <a [routerLink]="['/']" class="back-link">
+    <span class="material-symbols-outlined">arrow_back</span>
+    Back to Home
+  </a>
+</div>
